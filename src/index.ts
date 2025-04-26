@@ -14,21 +14,21 @@ const summerAudio = new Audio(summerSound);
 const rainAudio = new Audio(rainSound);
 const snowAudio = new Audio(winterSound);
 
-const audios: HTMLAudioElement[] = [summerAudio, rainAudio, snowAudio];
+const audios = [summerAudio, rainAudio, snowAudio];
 
-interface buttonConfigModel {
+interface ButtonConfigModel {
   buttonClass: string;
   audio: HTMLAudioElement;
   seasonClass: string;
 }
 
-const buttonConfigs: buttonConfigModel[] = [
+const buttonConfigs: ButtonConfigModel[] = [
   { buttonClass: 'button_summer', audio: summerAudio, seasonClass: 'page_summer' },
   { buttonClass: 'button_rain', audio: rainAudio, seasonClass: 'page_rain' },
   { buttonClass: 'button_snow', audio: snowAudio, seasonClass: 'page_snow' }
 ];
 
-function initialize(): void {
+function initialize() {
   page = document.querySelector('.page');
   pauseButton = document.querySelector('.pause__button');
   volume = document.querySelector('.volume__slider');
@@ -39,7 +39,7 @@ function initialize(): void {
 
 initialize();
 
-function setAudioControls(audio: HTMLAudioElement): void {
+function setAudioControls(audio: HTMLAudioElement) {
   if (volume) {
     volume.addEventListener('change', e => {
       const target = e.currentTarget as HTMLInputElement;
