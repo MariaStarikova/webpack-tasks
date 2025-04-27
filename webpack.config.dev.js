@@ -11,11 +11,6 @@ module.exports = merge(webpackConfig, {
     open: true
   },
   plugins: [
-    // new ESLintPlugin({
-    //   extensions: ['js'],
-    //   emitWarning: true,
-    //   failOnError: false
-    // })
     new ESLintPlugin({
       eslintPath: require.resolve('eslint')
     })
